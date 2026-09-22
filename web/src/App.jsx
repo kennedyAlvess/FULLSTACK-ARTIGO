@@ -83,8 +83,8 @@ export default function App() {
           <ul className="note-list" aria-label="Notas cadastradas">
             {notes.map((note) => (
               <li key={note.id}>
-                {/* WEB-SC-01: sink vulnerável intencional para o benchmark de DOM XSS. */}
-                <span dangerouslySetInnerHTML={{ __html: note.text }} />
+                {/* WEB-SC-01: referência segura trata o conteúdo não confiável como texto. */}
+                <span>{note.text}</span>
               </li>
             ))}
           </ul>
@@ -93,4 +93,3 @@ export default function App() {
     </main>
   )
 }
-

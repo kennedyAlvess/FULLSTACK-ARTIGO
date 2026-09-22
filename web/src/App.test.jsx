@@ -44,13 +44,13 @@ describe('App', () => {
     await waitFor(() => expect(screen.getByLabelText('Texto da nota')).toHaveValue(''))
   })
 
-  it('interpreta a marcação inerte no cenário vulnerável WEB-SC-01', async () => {
+  it('exibe a marcação inerte como texto literal na referência segura WEB-SC-01', async () => {
     fetch.mockReturnValueOnce(jsonResponse({ items: [{ id: 1, text: '<b>BENCHMARK</b>' }] }))
 
-    render(<App />)
+    const { container } = render(<App />)
 
-    const renderedContent = await screen.findByText('BENCHMARK')
-    expect(renderedContent.tagName).toBe('B')
+    expect(await screen.findByText('<b>BENCHMARK</b>')).toBeInTheDocument()
+    expect(container.querySelector('b')).not.toBeInTheDocument()
   })
 
   it('mostra erro quando a carga falha', async () => {
@@ -61,4 +61,3 @@ describe('App', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent('Não foi possível carregar as notas.')
   })
 })
-
