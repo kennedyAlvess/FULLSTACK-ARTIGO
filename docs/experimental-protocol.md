@@ -15,10 +15,10 @@
 ## Congelamento
 
 - branch vulnerável: `benchmark-vulnerable`;
-- commit vulnerável: `PENDENTE`;
+- commit da implementação vulnerável candidata: `b7cd9d682d7b99266287d6deda0c274a8fb0f556`;
 - tag imutável: `experiment-001` (`PENDENTE DE APROVAÇÃO`);
-- branch segura: `benchmark-secure` (`PENDENTE`);
-- commit seguro: `PENDENTE`;
+- branch segura: `benchmark-secure`;
+- commit da implementação segura candidata: `945876fb74d4b94908aa85fa441f7a5bf3e65236`;
 - data e versões das ferramentas de análise: `PENDENTE`.
 
 ## Checklist antes da publicação
