@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+**/TestResults/
+web/node_modules/
+web/dist/
+web/.env
+*.user
+*.suo
+.vs/
+.vscode/
+
